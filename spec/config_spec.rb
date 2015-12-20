@@ -11,5 +11,13 @@ describe Starfighter do
 
       expect(subject.api_key).to eq('The Last Starfighter')
     end
+
+    it 'sets the base_url' do
+      expect(subject.base_url).to eq('https://api.stockfighter.io/ob/api')
+    end
+
+    it 'creates a client object' do
+      expect(subject.client.class).to be(Starfighter::Client)
+    end
   end
 end
