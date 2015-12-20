@@ -1,6 +1,7 @@
 require 'starfighter/version'
 require 'starfighter/config'
 require 'starfighter/client'
+require 'pry'
 
 module Starfighter
   def self.configure

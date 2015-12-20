@@ -3,6 +3,8 @@ PATH
   specs:
     starfighter (0.0.1)
       faraday
+      pry
+      pry-nav
 
 GEM
   remote: https://rubygems.org/
@@ -38,8 +40,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pry
-  pry-nav
   rspec (>= 3.0.0)
   rspec-mocks (>= 3.0.0)
   starfighter!
