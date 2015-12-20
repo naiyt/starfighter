@@ -23,5 +23,20 @@ module Starfighter
       return @orderbooks[stock] if @orderbooks.has_key?(stock)
       @orderbooks[stock] = OrderBook.new(@venue_symbol, stock)
     end
+
+    def make_order(stock, price, qty, direction, order_type)
+      params = {
+        account: Starfighter.config.account,
+        venue: @venue_symbol,
+        stock: stock,
+        price: price,
+        qty: qty,
+        direction: direction,
+        orderType: order_type,
+      }
+
+      # TODO - some actual parsing on the response here
+      @client.post("venues/#{@venue_symbol}/stocks/#{stock}/orders", params.to_json)
+    end
   end
 end
