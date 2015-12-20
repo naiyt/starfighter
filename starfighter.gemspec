@@ -22,6 +22,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'rspec', '>= 3.0.0'
   gem.add_development_dependency 'rspec-mocks', '>= 3.0.0'
+  gem.add_development_dependency 'webmock'
 
   gem.add_dependency 'faraday'
   gem.add_dependency 'pry'

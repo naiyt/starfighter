@@ -16,4 +16,9 @@ module Starfighter
   def self.reset
     @config = Config.new
   end
+
+  # Checks to see if the Starfighter API is available
+  def self.up?
+    config.client.get('heartbeat')['ok'] rescue false
+  end
 end
