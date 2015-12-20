@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'starfighter/version'
 
 Gem::Specification.new do |gem|
-  gem.name           =  'shell_sim'
+  gem.name           =  'starfighter'
   gem.version        =  Starfighter::VERSION
   gem.date           =  '2015-12-20'
   gem.summary        =  'starfighter.io API wrapper'
