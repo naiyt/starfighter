@@ -51,4 +51,24 @@ describe Starfighter::Venue do
       end
     end
   end
+
+  describe '#orderbook' do
+    let(:stock) { '045' }
+    let(:bids) { [{'price' => 100, 'qty' => 1, 'isBuy' => true}] }
+    let(:asks) { [{'price' => 1, 'qty' => 1, 'isBuy' => false}] }
+    let(:ts) { '2015-12-04T09:02:16.680986205Z' }
+
+    def mock_orderbook_call(orderbook)
+      stub_request(:get, "https://api.stockfighter.io/ob/api/venues/#{venue}/stocks/#{stock}").
+        to_return(:status => 200, :body => orderbook.to_json, :headers => {})
+    end
+
+    it 'returns the orderbook for the given venue and stock' do
+      mock_orderbook_call({ok: true, venue: venue, symbol: stock, bids: bids, asks: asks, ts: ts})
+      orderbook = subject.orderbook(stock)
+      expect(orderbook.bids).to eq(bids)
+      expect(orderbook.asks).to eq(asks)
+      expect(orderbook.timestamp).to eq(ts)
+    end
+  end
 end
