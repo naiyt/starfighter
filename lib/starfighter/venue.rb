@@ -9,5 +9,12 @@ module Starfighter
     def up?
       @client.get("venues/#{@symbol}/heartbeat")['ok'] rescue false
     end
+
+    def stocks(refresh = false)
+      @stocks = nil if refresh
+      @stocks ||= begin
+        @client.get("venues/#{@symbol}/stocks")['symbols']
+      end
+    end
   end
 end
