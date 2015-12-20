@@ -7,6 +7,6 @@ WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
   config.before(:each) do
-    Starfighter.configure { |c| c.api_key = 'A totally valid API key' }
+    Starfighter.configure { |c| c.api_key = 'A totally valid API key'; c.account = '123456' }
   end
 end

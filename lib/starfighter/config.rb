@@ -1,6 +1,6 @@
 module Starfighter
   class Config
-    attr_accessor :api_key, :client
+    attr_accessor :api_key, :account, :client
     attr_reader :base_url
 
     def initialize

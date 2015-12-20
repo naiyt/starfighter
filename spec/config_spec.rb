@@ -12,6 +12,14 @@ describe Starfighter do
       expect(subject.api_key).to eq('The Last Starfighter')
     end
 
+    it 'lets you specify your account id' do
+      Starfighter.configure do |config|
+        config.account = '123456'
+      end
+
+      expect(subject.account).to eq('123456')
+    end
+
     it 'sets the base_url' do
       expect(subject.base_url).to eq('https://api.stockfighter.io/ob/api')
     end
