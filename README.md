@@ -1,0 +1,1 @@
+This will be a basic Ruby wrapper for the [Starfighter](https://starfighter.io) API. This won't contain any spoilers on level solutions, but just make for an easier way to interface with the API.
