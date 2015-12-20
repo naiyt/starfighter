@@ -32,7 +32,7 @@ describe Starfighter::Venue do
     end
 
     it 'raises an exception if there is a problem' do
-
+      skip('Implement exceptions for failed call to Venue#stocks')
     end
 
     describe 'caching' do
