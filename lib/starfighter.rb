@@ -1,6 +1,7 @@
 require 'starfighter/version'
 require 'starfighter/config'
 require 'starfighter/client'
+require 'starfighter/venue'
 require 'pry'
 
 module Starfighter

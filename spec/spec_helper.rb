@@ -7,7 +7,6 @@ WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
   config.before(:each) do
-    stub_request(:get, "https://api.stockfighter.io/ob/api/heartbeat").
-      to_return(:status => 200, :body => "{\"ok\":true,\"error\":\"\"}", :headers => {})
+    Starfighter.configure { |c| c.api_key = 'A totally valid API key' }
   end
 end
